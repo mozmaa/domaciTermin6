@@ -1,6 +1,8 @@
 package com.ftninformatika.jwd.modul2.restoran.service.impl;
 
+import java.time.LocalDate;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.LinkedHashSet;
@@ -10,6 +12,7 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.modelmapper.ModelMapper;
+import org.modelmapper.internal.bytebuddy.asm.Advice.Local;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -63,16 +66,26 @@ public class InMemoryRestoranService implements RestoranService {
 	}
 
 	@Override
-	public Collection<RestoranDTOGet> getAll(long kategorijaId) {
+	public Collection<RestoranDTOGet> getAll(long[]  kategorijaId, String naziv, LocalDate datumOsnivanjaOd, LocalDate datumOsnivanjaDo ) {
 		Collection<Restoran> restorani = dostava.getRestorani().values();
+		boolean contains;
 		
 		List<Restoran> rezultat = new ArrayList<Restoran>();
 		for(Restoran itRestoran : restorani) {
-			for (Kategorija itKategorija : itRestoran.getKategorije()) {
-				if(kategorijaId == 0 || itKategorija.getId() == kategorijaId) {
-					rezultat.add(itRestoran);
-					break;
+			contains = false;
+			for(Kategorija itKategorija : itRestoran.getKategorije()) {
+				for(int i = 0; i < kategorijaId.length; i++) {
+					if(itKategorija.getId() == kategorijaId[i]) {
+						contains = true;
+					}
 				}
+			}
+			if ((naziv == null || itRestoran.getNaziv().toLowerCase().contains(naziv.toLowerCase())) && 
+					(datumOsnivanjaOd == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaOd) >= 0) && 
+					(datumOsnivanjaDo == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaDo) <= 0)&&
+					(kategorijaId.length == 0 || contains)){
+				
+					rezultat.add(itRestoran);
 			}
 		}
 		return createDTO(rezultat);

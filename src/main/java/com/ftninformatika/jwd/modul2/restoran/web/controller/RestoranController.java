@@ -1,6 +1,10 @@
 package com.ftninformatika.jwd.modul2.restoran.web.controller;
 
 
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,8 +31,11 @@ public class RestoranController {
 
 	@GetMapping("") // bez @ResponseBody
 	public String getAll(ModelMap request, 
-			@RequestParam(required = false, defaultValue = "0") long kategorijaId) {
-		request.addAttribute("restorani", restoranService.getAll(kategorijaId));
+			@RequestParam(required = false, defaultValue = "") long[] kategorijaId,
+			@RequestParam(required = false, defaultValue = "") String naziv,
+			@RequestParam(required = false, defaultValue = "") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate datumOsnivanjaOd,
+			@RequestParam(required = false, defaultValue = "") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate datumOsnivanjaDo) {
+		request.addAttribute("restorani", restoranService.getAll(kategorijaId , naziv, datumOsnivanjaOd,  datumOsnivanjaDo));
 		request.addAttribute("kategorije", kategorijaService.getAll());
 		return "restorani";
 	}

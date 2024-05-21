@@ -31,55 +31,57 @@
 		</div>
 		<div class="row">
 			<div class="col">
-				<table class="table table-striped">
-					<thead>
-						<tr>
-							<th>Redni broj</th>
-							<th>Naziv</th>
-							<th>Kategorija</th>
-							<th>Datum osnivanja</th>
-							<th></th>
-						</tr>
-						<tr class="align-middle"> 
-							<th></th>
-							<th><input type="text" class="form-control" name="naziv" th:value="${param.naziv}"></th>
-							<td>
-								<div >
-									<div class="form-check" th:each="itKategorija : ${kategorije}">
-									 	 <input class="form-check-input" type="checkbox" value="" id="kategorijaCheck">
-									 	 <label class="form-check-label" for="kategorijaCheck" th:text="${itKategorija.naziv}"> </label>
+				<form>
+					<table class="table table-striped">
+						<thead>
+							<tr>
+								<th>Redni broj</th>
+								<th>Naziv</th>
+								<th>Kategorija</th>
+								<th>Datum osnivanja</th>
+								<th></th>
+							</tr>
+							<tr class="align-middle"> 
+								<th></th>
+								<th><input type="text" class="form-control" name="naziv" th:value="${param.naziv}"></th>
+								<td>
+									<div >
+										<div class="form-check" th:each="itKategorija : ${kategorije}" >
+										 	 <input class="form-check-input" name="kategorijaId" type="checkbox" th:value="${itKategorija.id}"  id="kategorijaCheck">
+										 	 <label class="form-check-label" for="kategorijaCheck" th:text="${itKategorija.naziv}"> </label>
+										</div>
 									</div>
-								</div>
-							</td>
-							<th>
-								<div class="input-group">
-									<span class="input-group-text">od</span>
-									<input type="date" class="form-control" name="datumOsnivanjaOd" th:value="${param.datumOsnivanjaOd}">
-								</div>
-								<div class="input-group">
-									<span class="input-group-text">do</span>
-									<input type="date" class="form-control" name="datumOsnivanjaDo"  th:value="${param.datumOsnivanjaDo}">
-								</div>
-							</th>
-							<th><input type="submit" class="btn btn-primary" value="Pretraži"></th>
-						</tr>
-					</thead>
-					<tbody class="table-group-divider">
-						<tr th:each="itRestoran, status: ${restorani}">
-							<td class="text-end" th:text="${status.count}">1</td>
-							<td><a th:href="|/restorani/prikaz?id=${itRestoran.id}|" th:text="${itRestoran.naziv}">restoran 1</a></td>
-							<td>
-								<ul>
-									<li th:each="itKategorija: ${itRestoran.kategorije}">
-										<a th:href="|/kategorije/prikaz?id=${itKategorija.id}|" th:text="${itKategorija.naziv}">kategorija 1</a>
-									</li>
-								</ul>
-							</td>
-							<td th:text="${#temporals.format(itRestoran.datumOsnivanja, 'dd.MM.yyyy.')}">01.01.2001.</td>
-							<td><a th:href="|/artikli?restoranId=${itRestoran.id}|">artikli</a></td>
-              			</tr>
-					</tbody>
-				</table>
+								</td>
+								<th>
+									<div class="input-group">
+										<span class="input-group-text">od</span>
+										<input type="date" class="form-control" name="datumOsnivanjaOd" th:value="${param.datumOsnivanjaOd}">
+									</div>
+									<div class="input-group">
+										<span class="input-group-text">do</span>
+										<input type="date" class="form-control" name="datumOsnivanjaDo"  th:value="${param.datumOsnivanjaDo}">
+									</div>
+								</th>
+								<th><input type="submit" class="btn btn-primary" value="Pretraži"></th>
+							</tr>
+						</thead>
+						<tbody class="table-group-divider">
+							<tr th:each="itRestoran, status: ${restorani}">
+								<td class="text-end" th:text="${status.count}">1</td>
+								<td><a th:href="|/restorani/prikaz?id=${itRestoran.id}|" th:text="${itRestoran.naziv}">restoran 1</a></td>
+								<td>
+									<ul>
+										<li th:each="itKategorija: ${itRestoran.kategorije}">
+											<a th:href="|/kategorije/prikaz?id=${itKategorija.id}|" th:text="${itKategorija.naziv}">kategorija 1</a>
+										</li>
+									</ul>
+								</td>
+								<td th:text="${#temporals.format(itRestoran.datumOsnivanja, 'dd.MM.yyyy.')}">01.01.2001.</td>
+								<td><a th:href="|/artikli?restoranId=${itRestoran.id}|">artikli</a></td>
+	              			</tr>
+						</tbody>
+					</table>
+				</form>
 			</div>
 		</div>
 	</div>
