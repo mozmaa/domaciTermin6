@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+    <title>Restorani</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+						<img src="/images/logo.svg" />
+					</a>
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+						<a class="nav-item nav-link active" href="/restorani">Restorani</a>
+						<a class="nav-item nav-link" href="/artikli">Artikli</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+					</div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="/restorani">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/restorani/dodavanje">Dodavanje</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<form action="/restorani/izmena" method="post">
+					<input type="hidden" name="id" th:value="${restoran.id}">
+					<div class="row my-2">
+						<label class="col-3 col-form-label text-end">Naziv</label>
+						<div class="col-7">
+							<input type="text" class="form-control" name="naziv" th:value="${restoran.naziv}">
+						</div>
+					</div>
+					<fieldset class="row my-2">
+						<legend class="col-3 col-form-label pt-0 text-end">Kategorija</legend>
+						<div class="col-7">
+							<div class="form-check" th:each="itKategorija: ${kategorije}">
+								<input
+									class="form-check-input"
+									type="checkbox"
+									name="kategorijaIds"
+									th:value="${itKategorija.id}"
+									th:checked="${#lists.contains(restoran.kategorije, itKategorija)}"
+								/>
+								<label class="form-check-label" th:text="${itKategorija.naziv}">kategorija 1</label>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row my-2">
+						<label class="col-3 col-form-label text-end">Datum osnivanja</label>
+						<div class="col-7">
+							<input type="date" class="form-control" name="datumOsnivanja" th:value="${restoran.datumOsnivanja}">
+    					</div>
+  					</div>
+					<div class="row my-2">
+						<div class="col-3"></div>
+						<div class="col-7">
+							<button type="submit" class="btn btn-primary w-100">Izmeni</button>
+						</div>
+					</div>
+				</form>
+				<form action="/restorani/brisanje" method="post">
+					<input type="hidden" name="id" th:value="${restoran.id}">
+					<div class="row my-2">
+						<div class="col-3"></div>
+						<div class="col-7">
+							<button type="submit" class="btn btn-primary w-100">Obriši</button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

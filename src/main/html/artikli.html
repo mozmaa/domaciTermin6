@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Artikli</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link active" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/artikli">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Redni broj</th>
+                <th>Naziv</th>
+                <th>Opis</th>
+                <th>Cena</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="text-end">1</td>
+                <td>
+                  <a href="/artikli/prikaz?id=1">Dupli burger</a>
+                </td>
+                <td>
+                  Burger meso 120 grama, toljeni sir, burger majonez, heinz kečap, ajsberg, kiseli krastavac
+                </td>
+                <td class="text-end">650.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">2</td>
+                <td>
+                  <a href="/artikli/prikaz?id=2">Pileći burger</a>
+                </td>
+                <td>Pileći burger, tost sir, pančeta, burger majonez, ajsberg, paradajz</td>
+                <td class="text-end">550.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">3</td>
+                <td>
+                  <a href="/artikli/prikaz?id=3">Indeks sendvič</a>
+                </td>
+                <td>Praška šunka, sir, šampinjoni</td>
+                <td class="text-end">320.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">4</td>
+                <td>
+                  <a href="/artikli/prikaz?id=4">Vratolomija sendvič</a>
+                </td>
+                <td>Suvi vrat, sir, jaja</td>
+                <td class="text-end">290.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">5</td>
+                <td>
+                  <a href="/artikli/prikaz?id=5">Crispy specijal</a>
+                </td>
+                <td>
+                  Hrskave sushi rolnice, pohovane u tempuri. Nori alga, pirinač, pohovana rolnica sa dodatkom
+                  krastavca, krem sira, lososa i japanskog nitsume sosa
+                </td>
+                <td class="text-end">920.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">6</td>
+                <td>
+                  <a href="/artikli/prikaz?id=6">Samurai roll</a>
+                </td>
+                <td>
+                  8 komada, nori alga, pirinač, losos, tuna, avokado, obložena breniranim lososom i
+                  tunom,unagi sos, samuraj sos, hrskavi crunch krompir
+                </td>
+                <td class="text-end">990.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">7</td>
+                <td>
+                  <a href="/artikli/prikaz?id=7">Onigiri sa tunom</a>
+                </td>
+                <td>pirinač, tuna, crni susam, japanski majonez i nori alge</td>
+                <td class="text-end">510.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">8</td>
+                <td>
+                  <a href="/artikli/prikaz?id=8">Onigiri sa lososom</a>
+                </td>
+                <td>pirinač, losos, crni susam, japanski majonez i nori alge</td>
+                <td class="text-end">670.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">9</td>
+                <td>
+                  <a href="/artikli/prikaz?id=9">Achiote piletina burito</a>
+                </td>
+                <td>
+                  Meksički pirinač, Crni pasulj, Mokahete Salsa, Pico de gallo, Kukuruz salsa, Marinirani
+                  Krastavac, Kačkavalj, Crema Fresca
+                </td>
+                <td class="text-end">560.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">10</td>
+                <td>
+                  <a href="/artikli/prikaz?id=10">Chorizo burito</a>
+                </td>
+                <td>
+                  Meksički pirinač, Pinto pasulj, Mokahete Salsa, Pico de gallo, Kukuruz Salsa, Kačkavalj,
+                  Marinirani krastavac, Marinirani crveni luk, Chipotle aioli
+                </td>
+                <td class="text-end">610.0</td>
+              </tr>
+              <tr>
+                <td class="text-end">11</td>
+                <td>
+                  <a href="/artikli/prikaz?id=11">Pečene pečurke burito</a>
+                </td>
+                <td>
+                  Beli pirinač, Crni pasulj, Pečene pečurke, Pico de gallo, Kukuruz salsa, Marinirani
+                  krastavac, Mokahete salsa, Mix zelenih salata, Krema Freska
+                </td>
+                <td class="text-end">480.0</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

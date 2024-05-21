@@ -1,0 +1,79 @@
+<div class="row mt-5">
+  <div class="col-5 mx-auto">
+    <div class="row my-2">
+      <div class="col-2"></div>
+      <div class="col-10"><h4 class="text-center">Porudzbina</h4></div>
+    </div>
+    <form action="/porudzbine/dodavanje" method="post">
+      <input type="hidden" name="id" value="1" />
+      <fieldset class="row my-2">
+        <legend class="col-2 col-form-label pt-0 text-end">Korisnik</legend>
+        <div class="col-10">
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="korisnickoIme" value="pera_peric" />
+            <label class="form-check-label">pera_peric</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="korisnickoIme" value="mika_mikic" />
+            <label class="form-check-label">mika_mikic</label>
+          </div>
+          <div class="form-check">
+            <input class="form-check-input" type="radio" name="korisnickoIme" value="zika_zikic" />
+            <label class="form-check-label">zika_zikic</label>
+          </div>
+        </div>
+      </fieldset>
+      <div class="row my-2">
+        <legend class="col-2 col-form-label pt-0 text-end">Napomena</legend>
+        <div class="col-10">
+          <textarea class="form-control" name="napomena" placeholder="Napomena..."></textarea>
+        </div>
+      </div>
+      <div class="row my-2">
+        <label class="col-2 col-form-label text-end">Stavke</label>
+        <div class="col-10">
+          <table class="w-100">
+            <thead>
+              <tr>
+                <th>Artikal</th>
+                <th>Kolicina</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Dupli burger</td>
+                <td>
+                  <input class="form-control" type="number" name="kolicine" value="0" />
+                </td>
+              </tr>
+              <tr>
+                <td>Pileći burger</td>
+                <td>
+                  <input class="form-control" type="number" name="kolicine" value="0" />
+                </td>
+              </tr>
+              <tr>
+                <td>Indeks sendvič</td>
+                <td>
+                  <input class="form-control" type="number" name="kolicine" value="0" />
+                </td>
+              </tr>
+              <tr>
+                <td>Vratolomija sendvič</td>
+                <td>
+                  <input class="form-control" type="number" name="kolicine" value="0" />
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+      <div class="row my-2">
+        <div class="col-2"></div>
+        <div class="col-10">
+          <button type="submit" class="btn btn-primary w-100">Poruci</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>

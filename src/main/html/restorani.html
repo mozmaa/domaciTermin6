@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Restorani</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link active" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/restorani">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Redni broj</th>
+                <th>Naziv</th>
+                <th>Kategorija</th>
+                <th>Artikli</th>
+                <th>Cena dostave</th>
+                <th>Adresa</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="text-end">1</td>
+                <td>
+                  <a href="/restorani/prikaz?id=1">Restoran 1</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/kategorije/prikaz?id=1">Burgeri</a>
+                    </li>
+                    <li>
+                      <a href="/kategorije/prikaz?id=2">Sendvici</a>
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/artikli/prikaz?id=1">Dupli burger</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=2">Pileći burger</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=3">Indeks sendvič</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=4">Vratolomija sendvič</a>
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-end">150.0</td>
+                <td>Bulevar Oslobodjenja 119, Novi Sad 21000</td>
+              </tr>
+              <tr>
+                <td class="text-end">2</td>
+                <td>
+                  <a href="/restorani/prikaz?id=2">Restoran 2</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/kategorije/prikaz?id=3">Susi</a>
+                    </li>
+                    <li>
+                      <a href="/kategorije/prikaz?id=4">Onigiri</a>
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/artikli/prikaz?id=5">Crispy specijal</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=6">Samurai roll</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=7">Onigiri sa tunom</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=8">Onigiri sa lososom</a>
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-end">250.0</td>
+                <td>Branka Bajica 9n, Novi Sad 21000</td>
+              </tr>
+              <tr>
+                <td class="text-end">3</td>
+                <td>
+                  <a href="/restorani/prikaz?id=3">Restoran 3</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/kategorije/prikaz?id=5">Burito</a>
+                    </li>
+                  </ul>
+                </td>
+                <td>
+                  <ul>
+                    <li>
+                      <a href="/artikli/prikaz?id=9">Achiote piletina burito</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=10">Chorizo burito</a>
+                    </li>
+                    <li>
+                      <a href="/artikli/prikaz?id=11">Pečene pečurke burito</a>
+                    </li>
+                  </ul>
+                </td>
+                <td class="text-end">200.0</td>
+                <td>Kralja Petra I 70, Sremska Mitrovica 22000</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Artikli</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+						<img src="/images/logo.svg" />
+					</a>
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+						<a class="nav-item nav-link" href="/restorani">Restorani</a>
+						<a class="nav-item nav-link active" href="/artikli">Artikli</a>
+						<a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+					</div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link active" href="/artikli">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/artikli/dodavanje">Dodavanje</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				<table class="table table-striped">
+					<thead>
+						<tr>
+							<th>Redni broj</th>
+							<th>Naziv</th>
+							<th>Opis</th>
+							<th>Cena</th>
+							<th>Restoran</th>
+						</tr>
+					</thead>
+					<tbody class="table-group-divider">
+						<tr th:each="itArtikal, status: ${artikli}">
+							<td class="text-end" th:text="${status.count}">1</td>
+							<td><a th:href="|/artikli/prikaz?id=${itArtikal.id}|" th:text="${itArtikal.naziv}">artikal 1</a></td>
+							<td th:text="${itArtikal.opis}">opis 1</td>
+							<td class="text-end" th:text="${itArtikal.cena}">100.0 RSD</td>
+							<td><a th:href="|/restorani/prikaz?id=${itArtikal.restoran.id}|" th:text="${itArtikal.restoran.naziv}">restoran 1</a></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+    </div>
+</body>
+</html>

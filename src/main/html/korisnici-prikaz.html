@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Korisnici</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link active" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/korisnici">Prikaz svih</a>
+              <a class="nav-item nav-link" href="/korisnici/dodavanje">Dodavanje</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-5 mx-auto">
+          <form action="/korisnici/izmena" method="post">
+            <div class="row my-2">
+              <label class="col-4 col-form-label text-end">Korisničko ime</label>
+              <div class="col-8">
+                <input
+                  type="text"
+                  class="form-control form-control-plaintext"
+                  name="korisnickoIme"
+                  readonly
+                  value="mika_mikic"
+                />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label text-end">Lozinka</label>
+              <div class="col-8">
+                <input type="password" class="form-control" autocomplete="new-password" name="lozinka" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label text-end">E-mail</label>
+              <div class="col-8">
+                <input type="text" class="form-control" name="eMail" value="mika_mikic@gmail.com" />
+              </div>
+            </div>
+            <fieldset class="row my-2">
+              <legend class="col-4 col-form-label pt-0 text-end">Pol</legend>
+              <div class="col-8">
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="pol" value="muški" />
+                  <label class="form-check-label">muški</label>
+                </div>
+                <div class="form-check form-check-inline">
+                  <input class="form-check-input" type="radio" name="pol" value="ženski" checked="checked" />
+                  <label class="form-check-label">ženski</label>
+                </div>
+              </div>
+            </fieldset>
+            <div class="row my-2">
+              <label class="col-4 col-form-label pt-0 text-end">Administrator</label>
+              <div class="col-8">
+                <input type="checkbox" class="form-check-input" name="administrator" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label pt-0 text-end">Ulica</label>
+              <div class="col-8">
+                <input type="text" class="form-control" name="ulica" value="Strazilovska" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label pt-0 text-end">Broj</label>
+              <div class="col-8">
+                <input type="text" class="form-control" name="broj" value="9" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label pt-0 text-end">Grad</label>
+              <div class="col-8">
+                <input type="text" class="form-control" name="grad" value="Novi Sad" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <label class="col-4 col-form-label pt-0 text-end">Poštanski broj</label>
+              <div class="col-8">
+                <input type="text" class="form-control" name="postanskiBroj" value="21000" />
+              </div>
+            </div>
+            <div class="row my-2">
+              <div class="col-4"></div>
+              <div class="col-8">
+                <button type="submit" class="btn btn-primary w-100">Izmeni</button>
+              </div>
+            </div>
+          </form>
+          <form action="/korisnici/brisanje" method="post">
+            <input type="hidden" name="korisnickoIme" value="mika_mikic" />
+            <div class="row my-2">
+              <div class="col-4"></div>
+              <div class="col-8">
+                <button type="submit" class="btn btn-primary w-100">Obriši</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

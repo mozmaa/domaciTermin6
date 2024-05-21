@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css"/>
+	<title>Korisnici</title>
+</head>
+<body>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col">
+				<nav class="navbar navbar-expand navbar-dark bg-dark">
+					<a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              			<img src="/images/logo.svg" />
+            		</a>
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="/index.html">Početna</a>
+						<a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+						<a class="nav-item nav-link" href="/restorani">Restorani</a>
+						<a class="nav-item nav-link" href="/artikli">Artikli</a>
+						<a class="nav-item nav-link active" href="/korisnici">Korisnici</a>
+					</div>
+				</nav>
+				<nav class="navbar navbar-expand navbar-dark bg-secondary">
+					<div class="navbar-nav">
+						<a class="nav-item nav-link" href="/korisnici">Prikaz svih</a>
+						<a class="nav-item nav-link" href="/korisnici/dodavanje">Dodavanje</a>
+					</div>
+				</nav>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-5 mx-auto">
+				<form action="/korisnici/izmena" method="post">
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Korisničko ime</label>
+						<div class="col-8">
+							<input
+								type="text"
+								class="form-control form-control-plaintext"
+								name="korisnickoIme"
+								readonly
+								th:value="${korisnik.korisnickoIme}"
+							>
+						</div>
+					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label text-end">Lozinka</label>
+						<div class="col-8">
+							<input type="password" class="form-control" autocomplete="new-password" name="lozinka">
+						</div>
+					</div>
+					<div class="row my-2">
+ 						<label class="col-4 col-form-label text-end">E-mail</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="eMail" th:value="${korisnik.eMail}">
+						</div>
+					</div>
+					<fieldset class="row my-2">
+						<legend class="col-4 col-form-label pt-0 text-end">Pol</legend>
+						<div class="col-8">
+							<div class="form-check form-check-inline">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="pol"
+									value="muški"
+									th:checked="${#strings.equals(korisnik.pol, 'muški')}"
+								>
+								<label class="form-check-label">muški</label>
+							</div>
+							<div class="form-check form-check-inline">
+								<input
+									class="form-check-input"
+									type="radio"
+									name="pol"
+									value="ženski"
+									th:checked="${#strings.equals(korisnik.pol, 'ženski')}"
+								>
+								<label class="form-check-label">ženski</label>
+							</div>
+						</div>
+					</fieldset>
+					<div class="row my-2">
+						<label class="col-4 col-form-label pt-0 text-end">Administrator</label>
+						<div class="col-8">
+							<input type="checkbox" class="form-check-input" name="administrator" th:checked="${korisnik.administrator}">
+						</div>
+					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label pt-0 text-end">Ulica</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="ulica" th:value="${korisnik.adresa.ulica}">
+						</div>
+					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label pt-0 text-end">Broj</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="broj" th:value="${korisnik.adresa.broj}">
+						</div>
+					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label pt-0 text-end">Grad</label>
+						<div class="col-8">
+								<input type="text" class="form-control" name="grad" th:value="${korisnik.adresa.grad}">
+						</div>
+					</div>
+					<div class="row my-2">
+						<label class="col-4 col-form-label pt-0 text-end">Poštanski broj</label>
+						<div class="col-8">
+							<input type="text" class="form-control" name="postanskiBroj" th:value="${korisnik.adresa.postanskiBroj}">
+						</div>
+					</div>
+					<div class="row my-2">
+						<div class="col-4"></div>
+						<div class="col-8">
+							<button type="submit" class="btn btn-primary w-100">Izmeni</button>
+						</div>
+					</div>
+				</form>
+				<form action="/korisnici/brisanje" method="post">
+            		<input type="hidden" name="korisnickoIme" th:value="${korisnik.korisnickoIme}">
+            		<div class="row my-2">
+              			<div class="col-4"></div>
+              				<div class="col-8">
+                				<button type="submit" class="btn btn-primary w-100">Obriši</button>
+              				</div>
+            			</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

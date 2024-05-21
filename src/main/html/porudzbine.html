@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Porudžbine</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link active" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/porudzbine">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Redni broj</th>
+                <th>Datum</th>
+                <th>Korisnik</th>
+                <th>Restoran</th>
+                <th>Stavke porudžbine</th>
+                <th>Cena dostave</th>
+                <th>Adresa dostave</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="text-end">1</td>
+                <td>
+                  <a href="/porudzbine/prikaz?id=1">20.04.2024. 20:16</a>
+                </td>
+
+                <td>
+                  <a href="/korisnici/prikaz?korisnickoIme=pera_peric">pera_peric</a>
+                </td>
+                <td>
+                  <a href="/restorani/prikaz?id=1">Restoran 1</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>2 x Dupli burger 650.0</li>
+                    <li>2 x Pileći burger 550.0</li>
+                    <li>3 x Indeks sendvič 320.0</li>
+                  </ul>
+                </td>
+
+                <td class="text-end">150.0</td>
+                <td>Sutjeska 22</td>
+              </tr>
+              <tr>
+                <td class="text-end">2</td>
+                <td>
+                  <a href="/porudzbine/prikaz?id=2">20.04.2024. 20:16</a>
+                </td>
+
+                <td>
+                  <a href="/korisnici/prikaz?korisnickoIme=mika_mikic">mika_mikic</a>
+                </td>
+                <td>
+                  <a href="/restorani/prikaz?id=2">Restoran 2</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>1 x Crispy specijal 920.0</li>
+                    <li>2 x Samurai roll 990.0</li>
+                  </ul>
+                </td>
+
+                <td class="text-end">250.0</td>
+                <td>Strazilovska 9</td>
+              </tr>
+              <tr>
+                <td class="text-end">3</td>
+                <td>
+                  <a href="/porudzbine/prikaz?id=3">20.04.2024. 20:16</a>
+                </td>
+
+                <td>
+                  <a href="/korisnici/prikaz?korisnickoIme=zika_zikic">zika_zikic</a>
+                </td>
+                <td>
+                  <a href="/restorani/prikaz?id=3">Restoran 3</a>
+                </td>
+                <td>
+                  <ul>
+                    <li>1 x Chorizo burito 610.0</li>
+                    <li>2 x Pečene pečurke burito 480.0</li>
+                  </ul>
+                </td>
+
+                <td class="text-end">200.0</td>
+                <td>Radnicka 34</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

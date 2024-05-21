@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" type="text/css" href="/webjars/bootstrap/css/bootstrap.min.css" />
+    <title>Kategorije</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col">
+          <nav class="navbar navbar-expand navbar-dark bg-dark">
+            <a class="navbar-brand" href="https://enastava.ftninformatika.com">
+              <img src="/images/logo.svg" />
+            </a>
+            <div class="navbar-nav">
+              <a class="nav-item nav-link" href="/index.html">Početna</a>
+              <a class="nav-item nav-link" href="/restorani">Restorani</a>
+              <a class="nav-item nav-link" href="/artikli">Artikli</a>
+              <a class="nav-item nav-link" href="/porudzbine">Porudžbine</a>
+              <a class="nav-item nav-link active" href="/kategorije">Kategorije</a>
+              <a class="nav-item nav-link" href="/korisnici">Korisnici</a>
+            </div>
+          </nav>
+          <nav class="navbar navbar-expand navbar-dark bg-secondary">
+            <div class="navbar-nav">
+              <a class="nav-item nav-link active" href="/kategorije">Prikaz svih</a>
+            </div>
+          </nav>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col">
+          <table class="table table-striped">
+            <thead>
+              <tr>
+                <th>Redni broj</th>
+                <th>Naziv</th>
+              </tr>
+            </thead>
+            <tbody class="table-group-divider">
+              <tr>
+                <td class="text-end">1</td>
+                <td>
+                  <a href="/kategorije/prikaz?id=1">Burgeri</a>
+                </td>
+                <td><a href="/restorani?kategorijaId=1">restorani</a></td>
+              </tr>
+              <tr>
+                <td class="text-end">2</td>
+                <td>
+                  <a href="/kategorije/prikaz?id=2">Sendvici</a>
+                </td>
+                <td><a href="/restorani?kategorijaId=2">restorani</a></td>
+              </tr>
+              <tr>
+                <td class="text-end">3</td>
+                <td>
+                  <a href="/kategorije/prikaz?id=3">Susi</a>
+                </td>
+                <td><a href="/restorani?kategorijaId=3">restorani</a></td>
+              </tr>
+              <tr>
+                <td class="text-end">4</td>
+                <td>
+                  <a href="/kategorije/prikaz?id=4">Onigiri</a>
+                </td>
+                <td><a href="/restorani?kategorijaId=4">restorani</a></td>
+              </tr>
+              <tr>
+                <td class="text-end">5</td>
+                <td>
+                  <a href="/kategorije/prikaz?id=5">Burito</a>
+                </td>
+                <td><a href="/restorani?kategorijaId=5">restorani</a></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
