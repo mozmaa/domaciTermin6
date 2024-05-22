@@ -2,11 +2,14 @@ package com.ftninformatika.jwd.modul2.restoran.service;
 
 import java.util.Collection;
 
+import org.springframework.stereotype.Service;
+
 import com.ftninformatika.jwd.modul2.restoran.dto.KategorijaDTOAddUpdate;
 import com.ftninformatika.jwd.modul2.restoran.dto.KategorijaDTOGet;
 
 import jakarta.validation.Valid;
 
+@Service
 public interface KategorijaService {
 
 	public Collection<KategorijaDTOGet> getAll();

@@ -4,7 +4,7 @@ import com.ftninformatika.jwd.modul2.restoran.dto.validation.Validation;
 
 import jakarta.validation.constraints.Positive;
 
-public class ArtikalDTOAddUpdate {
+public class ArtikalDTOAddUpdate extends ArtikalDTO{
 
 	@Positive(message = "Restoran mora biti unet" , groups = {Validation.Add.class , Validation.Update.class})
 	private long restoranId;

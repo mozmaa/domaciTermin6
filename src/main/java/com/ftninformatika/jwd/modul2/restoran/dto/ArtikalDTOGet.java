@@ -1,7 +1,7 @@
 package com.ftninformatika.jwd.modul2.restoran.dto;
 
 
-public class ArtikalDTOGet {
+public class ArtikalDTOGet extends ArtikalDTO{
 
 	private RestoranDTOGet restoran;
 

@@ -2,6 +2,7 @@ package com.ftninformatika.jwd.modul2.restoran.service.impl;
 
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.NoSuchElementException;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.context.annotation.Primary;
@@ -10,9 +11,8 @@ import org.springframework.validation.annotation.Validated;
 
 import com.ftninformatika.jwd.modul2.restoran.dto.KategorijaDTOAddUpdate;
 import com.ftninformatika.jwd.modul2.restoran.dto.KategorijaDTOGet;
-import com.ftninformatika.jwd.modul2.restoran.dto.RestoranDTOGet;
+import com.ftninformatika.jwd.modul2.restoran.dto.validation.Validation;
 import com.ftninformatika.jwd.modul2.restoran.model.Kategorija;
-import com.ftninformatika.jwd.modul2.restoran.model.Restoran;
 import com.ftninformatika.jwd.modul2.restoran.repository.KategorijaDAO;
 import com.ftninformatika.jwd.modul2.restoran.service.KategorijaService;
 
@@ -51,31 +51,37 @@ public class DataBaseKategorijaService implements KategorijaService {
 
 	@Override
 	public KategorijaDTOGet get(long id) {
-		// TODO Auto-generated method stub
-		return null;
+		Kategorija kategorija = kategorijaDAO.get(id);
+		if(kategorija == null)
+			throw new NoSuchElementException("Kategroija nije pronadjena!");
+		return createDTO(kategorija);
 	}
 
 	@Override
 	public Collection<KategorijaDTOGet> getAll(String naziv) {
-		// TODO Auto-generated method stub
-		return null;
+		Collection<Kategorija> kategorije = kategorijaDAO.getAll(naziv);
+		return createDTO(kategorije);
 	}
 
 	@Override
+	@Validated(Validation.Add.class)
 	public void add(@Valid KategorijaDTOAddUpdate kategorijaDTO) {
-		// TODO Auto-generated method stub
+		Kategorija kategorija = mapper.map(kategorijaDTO, Kategorija.class);
 		
+		kategorijaDAO.add(kategorija);
 	}
 
 	@Override
+	@Validated(Validation.Update.class)
 	public void update(@Valid KategorijaDTOAddUpdate kategorijaDTO) {
-		// TODO Auto-generated method stub
+		Kategorija kategorija = mapper.map(kategorijaDTO, Kategorija.class);
 		
+		kategorijaDAO.update(kategorija);
 	}
 
 	@Override
 	public void delete(long id) {
-		// TODO Auto-generated method stub
+		kategorijaDAO.delete(id);
 		
 	}
 

@@ -52,25 +52,34 @@ public class JDBCKategorijaDAO implements KategorijaDAO {
 
 	@Override
 	public Collection<Kategorija> getAll(String naziv) {
-		// TODO Auto-generated method stub
-		return null;
+		String sql = "SELECT id, naziv FROM kategorije WHERE ? IS NULL OR naziv LIKE ?";
+		
+		return jdbcTemplate.query(sql, new KategorijaRowMapper(),
+				naziv,
+				"%" + naziv + "%");
 	}
 
 	@Override
 	public void add(Kategorija kategorija) {
-		// TODO Auto-generated method stub
-
+		String sql = "INSERT INTO kategorije (naziv) VALUES (?)";
+		
+		jdbcTemplate.update(sql, kategorija.getNaziv());
 	}
 
 	@Override
 	public void update(Kategorija kategorija) {
-		// TODO Auto-generated method stub
+		String sql = "UPDATE kategorije SET naziv = ? WHERE id = ?";
+		jdbcTemplate.update(sql, kategorija.getNaziv(), kategorija.getId());
 
 	}
 
 	@Override
 	public void delete(long id) {
-		// TODO Auto-generated method stub
+		String sql = "DELETE FROM restoranKategorija WHERE kategorijaId = ?";
+		jdbcTemplate.update(sql, id);
+		
+		sql = "DELETE FROM kategorije WHERE id = ?";
+		jdbcTemplate.update(sql, id);
 
 	}
 
