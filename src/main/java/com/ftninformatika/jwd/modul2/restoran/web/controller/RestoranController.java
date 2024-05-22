@@ -31,7 +31,7 @@ public class RestoranController {
 
 	@GetMapping("") // bez @ResponseBody
 	public String getAll(ModelMap request, 
-			@RequestParam(required = false, defaultValue = "") long[] kategorijaId,
+			@RequestParam(required = false, defaultValue = "0") long kategorijaId,
 			@RequestParam(required = false, defaultValue = "") String naziv,
 			@RequestParam(required = false, defaultValue = "") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate datumOsnivanjaOd,
 			@RequestParam(required = false, defaultValue = "") @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME) LocalDate datumOsnivanjaDo) {

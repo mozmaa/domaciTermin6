@@ -44,14 +44,20 @@
 							<tr class="align-middle"> 
 								<th></th>
 								<th><input type="text" class="form-control" name="naziv" th:value="${param.naziv}"></th>
-								<td>
+								<th>
+									<select class="form-select" name="kategorijaId">
+  										<option value="0">svi</option>
+  										<option th:each="itKategorija: ${kategorije}" th:value="${itKategorija.id}" th:text="${itKategorija.naziv}" th:selected="${#strings.equals(itKategorija.id, param.kategorijaId)}">kategorija 1</option>
+									</select>
+								</th>
+								<!--<td>
 									<div >
 										<div class="form-check" th:each="itKategorija : ${kategorije}" >
 										 	 <input class="form-check-input" name="kategorijaId" type="checkbox" th:value="${itKategorija.id}"  id="kategorijaCheck">
 										 	 <label class="form-check-label" for="kategorijaCheck" th:text="${itKategorija.naziv}"> </label>
 										</div>
 									</div>
-								</td>
+								</td> -->
 								<th>
 									<div class="input-group">
 										<span class="input-group-text">od</span>

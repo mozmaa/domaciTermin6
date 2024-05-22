@@ -65,31 +65,31 @@ public class InMemoryRestoranService implements RestoranService {
 		return createDTO(restorani);
 	}
 
-	@Override
-	public Collection<RestoranDTOGet> getAll(long[]  kategorijaId, String naziv, LocalDate datumOsnivanjaOd, LocalDate datumOsnivanjaDo ) {
-		Collection<Restoran> restorani = dostava.getRestorani().values();
-		boolean contains;
-		
-		List<Restoran> rezultat = new ArrayList<Restoran>();
-		for(Restoran itRestoran : restorani) {
-			contains = false;
-			for(Kategorija itKategorija : itRestoran.getKategorije()) {
-				for(int i = 0; i < kategorijaId.length; i++) {
-					if(itKategorija.getId() == kategorijaId[i]) {
-						contains = true;
-					}
-				}
-			}
-			if ((naziv == null || itRestoran.getNaziv().toLowerCase().contains(naziv.toLowerCase())) && 
-					(datumOsnivanjaOd == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaOd) >= 0) && 
-					(datumOsnivanjaDo == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaDo) <= 0)&&
-					(kategorijaId.length == 0 || contains)){
-				
-					rezultat.add(itRestoran);
-			}
-		}
-		return createDTO(rezultat);
-	}
+//	@Override
+//	public Collection<RestoranDTOGet> getAll(long  kategorijaId, String naziv, LocalDate datumOsnivanjaOd, LocalDate datumOsnivanjaDo ) {
+//		Collection<Restoran> restorani = dostava.getRestorani().values();
+//		boolean contains;
+//		
+//		List<Restoran> rezultat = new ArrayList<Restoran>();
+//		for(Restoran itRestoran : restorani) {
+//			contains = false;
+//			for(Kategorija itKategorija : itRestoran.getKategorije()) {
+//				for(int i = 0; i < kategorijaId.length; i++) {
+//					if(itKategorija.getId() == kategorijaId[i]) {
+//						contains = true;
+//					}
+//				}
+//			}
+//			if ((naziv == null || itRestoran.getNaziv().toLowerCase().contains(naziv.toLowerCase())) && 
+//					(datumOsnivanjaOd == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaOd) >= 0) && 
+//					(datumOsnivanjaDo == null || itRestoran.getDatumOsnivanja().compareTo(datumOsnivanjaDo) <= 0)&&
+//					(kategorijaId.length == 0 || contains)){
+//				
+//					rezultat.add(itRestoran);
+//			}
+//		}
+//		return createDTO(rezultat);
+//	}
 
 	@Override
 	@Validated(Validation.Add.class)
@@ -139,6 +139,13 @@ public class InMemoryRestoranService implements RestoranService {
 			}
 		}
 		dostava.getRestorani().remove(id);
+	}
+
+	@Override
+	public Collection<RestoranDTOGet> getAll(long kategorijaId, String naziv, LocalDate datumOsnivanjaOd,
+			LocalDate datumOsnivanjaDo) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

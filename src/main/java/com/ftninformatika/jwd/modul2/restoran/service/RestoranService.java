@@ -12,7 +12,7 @@ public interface RestoranService {
 
 	public RestoranDTOGet get(long id);
 	public Collection<RestoranDTOGet> getAll();
-	public Collection<RestoranDTOGet> getAll(long[] kategorijaId , String naziv, LocalDate datumOsnivanjaOd, LocalDate datumOsnivanjaDo);
+	public Collection<RestoranDTOGet> getAll(long kategorijaId , String naziv, LocalDate datumOsnivanjaOd, LocalDate datumOsnivanjaDo);
 	public void add(@Valid RestoranDTOAddUpdate restoranDTO);
 	public void update(@Valid RestoranDTOAddUpdate restoranDTO);
 	public void delete(long id);
