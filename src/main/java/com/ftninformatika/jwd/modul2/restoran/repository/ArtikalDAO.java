@@ -9,7 +9,7 @@ public interface ArtikalDAO {
 	public Artikal get(long id);
 	public Collection<Artikal> getAll();
 	public Collection<Artikal> getAll(String naziv);
-	public void add(Artikal artiakl);
-	public void update(Artikal artiakl);
+	public void add(Artikal artikal);
+	public void update(Artikal artikal);
 	public void delete(long id);
 }

@@ -14,5 +14,5 @@ public interface KorisnikService {
 	public Collection<KorisnikDTOGet> getAll(String korisnickoIme);
 	public void add(@Valid KorisnikDTOAddUpdate korisnikDTO);
 	public void update(@Valid KorisnikDTOAddUpdate korisnikDTO);
-	public void delete(long id);
+	public void delete(String korisnickoIme);
 }

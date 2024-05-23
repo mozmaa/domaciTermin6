@@ -15,4 +15,5 @@ public interface ArtikalService {
 	public void add(@Valid ArtikalDTOAddUpdate artikalDTO);
 	public void update(@Valid ArtikalDTOAddUpdate artikalDTO);
 	public void delete(long id);
+	
 }

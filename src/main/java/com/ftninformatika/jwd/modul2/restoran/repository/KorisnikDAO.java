@@ -11,5 +11,5 @@ public interface KorisnikDAO {
 	public Collection<Korisnik> getAll(String korisnickoIme);
 	public void add(Korisnik korisnik);
 	public void update(Korisnik korisnik);
-	public void delete(long id);
+	public void delete(String korisnickoIme);
 }
